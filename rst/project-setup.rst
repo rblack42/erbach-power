@@ -22,3 +22,13 @@ The **-p** option on the **mkdir** line lets you run this set of commands over
 and over without problems. This is important to me, since my documentation
 actually runs these commands when i build the web pages for this project. We
 will cover documentation soon enough.
+
+Step 2: Startup Makefile
+************************
+
+Long ago I created a modular Makefile* system to simplify creating a **Makefile** for a project. Basically, this file will be in your new project folder:
+
+..  literalinclude:: ../Makefile
+    :linenos:
+
+

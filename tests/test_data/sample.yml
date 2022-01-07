@@ -1,0 +1,4 @@
+---
+- name: "sample file"
+  data:
+    - 1.234

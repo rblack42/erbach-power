@@ -1,5 +1,8 @@
 wheel
 
+# application
+pyyaml
+
 # testing
 pytest
 pytest-cov

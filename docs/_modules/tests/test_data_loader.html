@@ -140,11 +140,37 @@
 
 <span class="c1"># test datadir setup --------------------------------------------</span>
 <div class="viewcode-block" id="test_default_datadir"><a class="viewcode-back" href="../../code/unit-tests.html#tests.test_data_loader.test_default_datadir">[docs]</a><span class="k">def</span> <span class="nf">test_default_datadir</span><span class="p">():</span>
-    <span class="sd">&quot;&quot;&quot;test setting datadir option&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;test default datadir option&quot;&quot;&quot;</span>
     <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;hodson-wart&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;circular-arc&#39;</span><span class="p">)</span>
+    <span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
     <span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
-        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="vm">__file__</span><span class="p">,</span><span class="s1">&#39;../data&#39;</span><span class="p">))</span>
+        <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span><span class="s1">&#39;../data&#39;</span><span class="p">))</span>
     <span class="k">assert</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_datadir</span><span class="p">()</span> <span class="o">==</span> <span class="n">datadir</span></div>
+
+<div class="viewcode-block" id="test_set_relative_data_dir_path"><a class="viewcode-back" href="../../code/unit-tests.html#tests.test_data_loader.test_set_relative_data_dir_path">[docs]</a><span class="k">def</span> <span class="nf">test_set_relative_data_dir_path</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;test setting relative datadir path&quot;&quot;&quot;</span>
+    <span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
+    <span class="n">relpath</span> <span class="o">=</span> <span class="s2">&quot;../testdata&quot;</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;hodson-wart&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;circular-arc&#39;</span><span class="p">)</span>
+    <span class="n">dl</span><span class="o">.</span><span class="n">set_data_dir</span><span class="p">(</span><span class="n">relpath</span><span class="p">)</span>
+    <span class="n">testpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span><span class="n">relpath</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_datadir</span><span class="p">()</span> <span class="o">==</span> <span class="n">testpath</span></div>
+
+<div class="viewcode-block" id="test_set_home_data_dir_path"><a class="viewcode-back" href="../../code/unit-tests.html#tests.test_data_loader.test_set_home_data_dir_path">[docs]</a><span class="k">def</span> <span class="nf">test_set_home_data_dir_path</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;test setting datadir path in home directory&quot;&quot;&quot;</span>
+    <span class="n">dirname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">)</span>
+    <span class="n">relpath</span> <span class="o">=</span> <span class="s2">&quot;~/testdata&quot;</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;hodson-wart&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;circular-arc&#39;</span><span class="p">)</span>
+    <span class="n">dl</span><span class="o">.</span><span class="n">set_data_dir</span><span class="p">(</span><span class="n">relpath</span><span class="p">)</span>
+    <span class="n">testpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">dirname</span><span class="p">,</span><span class="s1">&#39;testdata&#39;</span><span class="p">))</span>
+    <span class="k">assert</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_datadir</span><span class="p">()</span> <span class="o">==</span> <span class="n">testpath</span></div>
+
+<div class="viewcode-block" id="test_set_absolute_data_dir_path"><a class="viewcode-back" href="../../code/unit-tests.html#tests.test_data_loader.test_set_absolute_data_dir_path">[docs]</a><span class="k">def</span> <span class="nf">test_set_absolute_data_dir_path</span><span class="p">():</span>
+    <span class="sd">&quot;&quot;&quot;test setting datadir path to absolute path&quot;&quot;&quot;</span>
+    <span class="n">abspath</span> <span class="o">=</span> <span class="s2">&quot;/testdata&quot;</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;hodson-wart&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;circular-arc&#39;</span><span class="p">)</span>
+    <span class="n">dl</span><span class="o">.</span><span class="n">set_data_dir</span><span class="p">(</span><span class="n">abspath</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_datadir</span><span class="p">()</span> <span class="o">==</span> <span class="n">abspath</span></div>
 
 
 </pre></div>
