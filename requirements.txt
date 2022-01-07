@@ -1,7 +1,15 @@
 wheel
+
+# testing
 pytest
 pytest-cov
 coverage
+
+# documentation
 sphinx
 sphinxcontrib-programoutput
 sphinxcontrib-spelling
+
+# package management
+bump2version
+twine
