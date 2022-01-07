@@ -1,0 +1,29 @@
+# Pycharm
+.idea
+
+# Python
+.direnv/
+__pycache__
+*.py[cod]
+
+# Sphinx
+.doctrees
+_build
+*.spelling
+
+# Vim
+*.swp
+*~
+
+# Mac
+.DS_Store
+
+.pytest_cache
+
+# PyPi
+build
+dist
+*.egg-info
+
+.coverage
+
