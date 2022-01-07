@@ -1,4 +1,6 @@
 Walter Erbach's Indoor Rubber Power Calculator
+##############################################
+
 :Author: Roie R. Black
 :Email: roie.black@gmail.com
 :Docs: https://rblack42.github.io/erbach-power
@@ -9,7 +11,7 @@ Walter Erbach's Indoor Rubber Power Calculator
     :stub-columns: 1
 
     * - tests
-      - | |github|
+      - | |github| |commits-since|
 
 
 .. |github| image:: https://github.com/rblack42/erbach-power/actions/workflows/python-app.yml/badge.svg
@@ -20,6 +22,8 @@ Walter Erbach's Indoor Rubber Power Calculator
     :alt: Commits since latest release
     :target: https://github.com/rblack42/erbach-power/compare/v0.1.0...main
 
+..  _Math-Magik:    https://rblack42.github.io/math-magik
+
 ..  image:: rst/_static/lpp.gif
     :align: center
     :width: 600
@@ -27,4 +31,4 @@ Walter Erbach's Indoor Rubber Power Calculator
 .. end-badges
 
 
-This is a Python version of Walter Erbach's Indoor Power Calculator from the 1990 NFFS Symposium
+This is a Python version of Walter Erbach's Indoor Power Calculator from the 1990 NFFS Symposium. This code is part of the Math-Magik_ project.
