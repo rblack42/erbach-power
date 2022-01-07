@@ -62,4 +62,14 @@ def test_set_absolute_data_dir_path():
     dl.set_data_dir(abspath)
     assert dl.get_datadir() == abspath
 
+# test data directory names --------------------------------------
+def test_model_list():
+    dl = DataLoader(model='hodson-wart', airfoil='circular-arc')
+    assert "erbach-basic" in dl.get_model_list()
+
+def test_airfoil_list():
+    dl = DataLoader(model='hodson-wart', airfoil='circular-arc')
+    assert "mcbride-b7" in dl.get_airfoil_list()
+
+
 

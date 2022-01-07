@@ -97,6 +97,14 @@
             <p class="logo"><a href="../contents.html">
               <img class="logo" src="../_static/badge.svg" alt="Logo"/>
             </a></p>
+  <h3><a href="../contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">DataLoader</a><ul>
+<li><a class="reference internal" href="#notes">Notes</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="../changes.html"
                         title="previous chapter">Change Log</a></p>
@@ -128,7 +136,7 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>Read time: 0.2 minutes (25 words)</p>
+  <p>Read time: 1.1 minutes (110 words)</p>
 <section id="module-erbach.DataLoader">
 <span id="dataloader"></span><h1>DataLoader<a class="headerlink" href="#module-erbach.DataLoader" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
@@ -154,6 +162,12 @@
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.load_data">
+<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.load_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>load configured data files</p>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.set_data_dir">
 <span class="sig-name descname"><span class="pre">set_data_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datadir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.set_data_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.set_data_dir" title="Permalink to this definition">¶</a></dt>
 <dd><p>set project data directory path</p>
@@ -161,6 +175,19 @@
 
 </dd></dl>
 
+<section id="notes">
+<h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>DataLoader</strong> class manages loading model and airfoil data files located in
+the configured <strong>datapath</strong> attribute.</p>
+<p>For model data, one data file, either <strong>YAML</strong> or <strong>JSON</strong> should be in a
+<strong>&lt;datadir&gt;/models/&lt;model&gt;/name&gt;.{yml | json}</strong> file.</p>
+<p>For airfoils, the data files are located under the airfoil name folder:
+&lt;datadir&gt;/airfoils/&lt;airfoil-name&gt;/{CL|CD}.{yml|json}**. If the file is a <strong>JSON</strong>
+file, it is assumed to have been created using the <em>WebAppDigitizer</em>
+application. All installed airfoils need at lease a <strong>CL.{yml|json}</strong> and
+<strong>CD.{yml|json}</strong>. files. Other files may be present, but they will not be loaded
+normally.</p>
+</section>
 </section>
 
 

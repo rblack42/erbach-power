@@ -1,7 +1,12 @@
 wheel
 
 # application
+click
 pyyaml
+numpy
+scipy
+pint
+matplotlib
 
 # testing
 pytest

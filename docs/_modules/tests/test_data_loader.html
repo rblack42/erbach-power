@@ -172,6 +172,16 @@
     <span class="n">dl</span><span class="o">.</span><span class="n">set_data_dir</span><span class="p">(</span><span class="n">abspath</span><span class="p">)</span>
     <span class="k">assert</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_datadir</span><span class="p">()</span> <span class="o">==</span> <span class="n">abspath</span></div>
 
+<span class="c1"># test data directory names --------------------------------------</span>
+<span class="k">def</span> <span class="nf">test_model_list</span><span class="p">():</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;hodson-wart&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;circular-arc&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="s2">&quot;erbach-basic&quot;</span> <span class="ow">in</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_model_list</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">test_airfoil_list</span><span class="p">():</span>
+    <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="n">model</span><span class="o">=</span><span class="s1">&#39;hodson-wart&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;circular-arc&#39;</span><span class="p">)</span>
+    <span class="k">assert</span> <span class="s2">&quot;mcbride-b7&quot;</span> <span class="ow">in</span> <span class="n">dl</span><span class="o">.</span><span class="n">get_airfoil_list</span><span class="p">()</span>
+
+
 
 </pre></div>
 

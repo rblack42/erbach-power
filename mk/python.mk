@@ -16,4 +16,8 @@ test:	## run tests using pytest
 changes:	## create CHANGES file from git logs
 	git log --oneline --pretty=format:"* %ad: %s" --date=short > CHANGES
 
+.PHONY: run
+run:
+	python -m erbach
+
 

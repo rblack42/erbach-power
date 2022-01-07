@@ -28,3 +28,7 @@ def test_load_yaml_file():
 def test_load_sample_yaml_file():
     """check that loading bad file name returns None"""
     assert utils.load_yaml_file("junk") == None
+
+def test_load_sample_yaml_file():
+    """check that loading bad file name returns None"""
+    assert utils.load_yaml_file("~/.erbach/sample.yml") == None
