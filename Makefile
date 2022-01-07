@@ -1,14 +1,8 @@
-.PHONY: venv
-venv:
-	echo 'layout python3' > .envrc && \
-		direnv allow
+PROCECT	:= $(notdir $(PWD))
+MK	:= mk
 
-.PHONY: reqs
-reqs:
-	pip install -U pip
-	pip install -r requirements.txt
+all:	test
 
-.PHONY: test
-test:
-	pytest
-
+include $(MK)/help.mk
+include $(MK)/python.mk
+include $(MK)/sphinx.mk

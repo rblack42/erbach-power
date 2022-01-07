@@ -2,4 +2,6 @@ wheel
 pytest
 pytest-cov
 coverage
-
+sphinx
+sphinxcontrib-programoutput
+sphinxcontrib-spelling
