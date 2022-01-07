@@ -1,2 +1,9 @@
+* 2022-01-07: added click cli interface
+* 2022-01-07: testing data file loaders
+* 2022-01-07: Bump version: 0.1.0 → 0.1.1
+* 2022-01-07: added version controls
+* 2022-01-07: badge update
+* 2022-01-07: ad github workflow test badge
+* 2022-01-07: testing and docs update
 * 2022-01-06: working on data loader
 * 2022-01-06: Basic project setup
