@@ -26,7 +26,7 @@ setup(
     author_email='roie.black@gmail.com',
     url='https://github.com/rblack42/erbach-power',
     license='BSD',
-    version='0.1.1',
+    version='0.1.2',
     packages=['erbach'],
 entry_points= {
         "console_scripts": [

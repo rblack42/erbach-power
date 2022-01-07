@@ -18,9 +18,9 @@ Walter Erbach's Indoor Rubber Power Calculator
     :alt: Github Workflows
     :target: https://github.com/rblack42/erbach-power
 
-.. |commits-since| image:: https://img.shields.io/github/commits-since/rblack42/erbach-power/v0.1.1.svg
+.. |commits-since| image:: https://img.shields.io/github/commits-since/rblack42/erbach-power/v0.1.2.svg
     :alt: Commits since latest release
-    :target: https://github.com/rblack42/erbach-power/compare/v0.1.1...main
+    :target: https://github.com/rblack42/erbach-power/compare/v0.1.2...main
 
 ..  _Math-Magik:    https://rblack42.github.io/math-magik
 
