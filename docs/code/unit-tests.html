@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx13.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/a4_railroad_diagram.css" />
     <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -97,6 +98,19 @@
             <p class="logo"><a href="../contents.html">
               <img class="logo" src="../_static/badge.svg" alt="Logo"/>
             </a></p>
+  <h3><a href="../contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Unit Tests</a><ul>
+<li><a class="reference internal" href="#module-tests.test_cli">Command Lne Interface</a></li>
+<li><a class="reference internal" href="#module-tests.test_curve_fit">Plotting Routines</a></li>
+<li><a class="reference internal" href="#module-tests.test_data_loader">Data File Loader</a></li>
+<li><a class="reference internal" href="#module-tests.test_sanity">Version Management</a></li>
+<li><a class="reference internal" href="#module-tests.test_version">General Program Utilities</a></li>
+<li><a class="reference internal" href="#basic-teting-system-check">Basic Teting System Check</a></li>
+</ul>
+</li>
+</ul>
+
   <h4>Previous topic</h4>
   <p class="topless"><a href="DataLoader.html"
                         title="previous chapter">DataLoader</a></p>
@@ -128,9 +142,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>Read time: 1.2 minutes (117 words)</p>
+  <p>Read time: 0.7 minutes (74 words)</p>
+<section id="unit-tests">
+<h1>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h1>
 <section id="module-tests.test_cli">
-<span id="unit-tests"></span><h1>Unit Tests<a class="headerlink" href="#module-tests.test_cli" title="Permalink to this headline">¶</a></h1>
+<span id="command-lne-interface"></span><h2>Command Lne Interface<a class="headerlink" href="#module-tests.test_cli" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="tests.test_cli.test_cli_environment">
 <span class="sig-prename descclassname"><span class="pre">tests.test_cli.</span></span><span class="sig-name descname"><span class="pre">test_cli_environment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_cli.html#test_cli_environment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_cli.test_cli_environment" title="Permalink to this definition">¶</a></dt>
@@ -143,13 +159,19 @@
 <dd><p>test cli help option</p>
 </dd></dl>
 
-<span class="target" id="module-tests.test_curve_fit"></span><dl class="py function">
+</section>
+<section id="module-tests.test_curve_fit">
+<span id="plotting-routines"></span><h2>Plotting Routines<a class="headerlink" href="#module-tests.test_curve_fit" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
 <dt class="sig sig-object py" id="tests.test_curve_fit.test_fit_function">
 <span class="sig-prename descclassname"><span class="pre">tests.test_curve_fit.</span></span><span class="sig-name descname"><span class="pre">test_fit_function</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_curve_fit.html#test_fit_function"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_curve_fit.test_fit_function" title="Permalink to this definition">¶</a></dt>
 <dd><p>test fit function returns point from input</p>
 </dd></dl>
 
-<span class="target" id="module-tests.test_data_loader"></span><dl class="py function">
+</section>
+<section id="module-tests.test_data_loader">
+<span id="data-file-loader"></span><h2>Data File Loader<a class="headerlink" href="#module-tests.test_data_loader" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
 <dt class="sig sig-object py" id="tests.test_data_loader.test_constructor_no_parameters">
 <span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_constructor_no_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_constructor_no_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_constructor_no_parameters" title="Permalink to this definition">¶</a></dt>
 <dd><p>test constructor with no parameters</p>
@@ -197,48 +219,28 @@
 <dd><p>test setting relative datadir path</p>
 </dd></dl>
 
-<span class="target" id="module-tests.test_sanity"></span><dl class="py function">
+</section>
+<section id="module-tests.test_sanity">
+<span id="version-management"></span><h2>Version Management<a class="headerlink" href="#module-tests.test_sanity" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
 <dt class="sig sig-object py" id="tests.test_sanity.test_sanity">
 <span class="sig-prename descclassname"><span class="pre">tests.test_sanity.</span></span><span class="sig-name descname"><span class="pre">test_sanity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_sanity.html#test_sanity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_sanity.test_sanity" title="Permalink to this definition">¶</a></dt>
 <dd><p>test to make sure pytest is working</p>
 </dd></dl>
 
-<span class="target" id="module-tests.test_utils"></span><dl class="py function">
-<dt class="sig sig-object py" id="tests.test_utils.test_load_json_file">
-<span class="sig-prename descclassname"><span class="pre">tests.test_utils.</span></span><span class="sig-name descname"><span class="pre">test_load_json_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_utils.html#test_load_json_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_utils.test_load_json_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>check that loading sample json file does not return None</p>
-</dd></dl>
-
+</section>
+<section id="module-tests.test_version">
+<span id="general-program-utilities"></span><h2>General Program Utilities<a class="headerlink" href="#module-tests.test_version" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_utils.test_load_sample_json_file">
-<span class="sig-prename descclassname"><span class="pre">tests.test_utils.</span></span><span class="sig-name descname"><span class="pre">test_load_sample_json_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_utils.html#test_load_sample_json_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_utils.test_load_sample_json_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>check that loading bad file name returns None</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_utils.test_load_sample_yaml_file">
-<span class="sig-prename descclassname"><span class="pre">tests.test_utils.</span></span><span class="sig-name descname"><span class="pre">test_load_sample_yaml_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_utils.html#test_load_sample_yaml_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_utils.test_load_sample_yaml_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>check that loading bad file name returns None</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_utils.test_load_yaml_file">
-<span class="sig-prename descclassname"><span class="pre">tests.test_utils.</span></span><span class="sig-name descname"><span class="pre">test_load_yaml_file</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_utils.html#test_load_yaml_file"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_utils.test_load_yaml_file" title="Permalink to this definition">¶</a></dt>
-<dd><p>check that loading sample yaml file does not return None</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_utils.test_normalize">
-<span class="sig-prename descclassname"><span class="pre">tests.test_utils.</span></span><span class="sig-name descname"><span class="pre">test_normalize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_utils.html#test_normalize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_utils.test_normalize" title="Permalink to this definition">¶</a></dt>
-<dd><p>test reducing precision of floating point numbers</p>
-</dd></dl>
-
-<span class="target" id="module-tests.test_version"></span><dl class="py function">
 <dt class="sig sig-object py" id="tests.test_version.test_version">
 <span class="sig-prename descclassname"><span class="pre">tests.test_version.</span></span><span class="sig-name descname"><span class="pre">test_version</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_version.html#test_version"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_version.test_version" title="Permalink to this definition">¶</a></dt>
 <dd><p>Return current application version string</p>
 </dd></dl>
 
+</section>
+<section id="basic-teting-system-check">
+<h2>Basic Teting System Check<a class="headerlink" href="#basic-teting-system-check" title="Permalink to this headline">¶</a></h2>
+</section>
 </section>
 
 

@@ -30,6 +30,7 @@ extensions = [
     'sphinxcontrib.programoutput',
     'sphinx.ext.imgmath',
     'sphinx.ext.viewcode',
+    'sphinx_a4doc',
 ]
 
 imgmath_font_size = 16

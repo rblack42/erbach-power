@@ -1,0 +1,199 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Command Line interface &#8212; Erbach Power 0.1.0 documentation</title>
+    <link rel="stylesheet" href="_static/sphinx13.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx13.css" />
+    <link rel="stylesheet" type="text/css" href="_static/a4_railroad_diagram.css" />
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Change Log" href="changes.html" />
+    <link rel="prev" title="Erbach Power Calculator Data Directory" href="data-directory.html" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
+          rel='stylesheet' type='text/css' />
+ 
+    <style type="text/css">
+      table.right { float: right; margin-left: 20px; }
+      table.right td { border: 1px solid #ccc; }
+      
+    </style>
+    <script>
+      // intelligent scrolling of the sidebar content
+      $(window).scroll(function() {
+        var sb = $('.sphinxsidebarwrapper');
+        var win = $(window);
+        var sbh = sb.height();
+        var offset = $('.sphinxsidebar').position()['top'];
+        var wintop = win.scrollTop();
+        var winbot = wintop + win.innerHeight();
+        var curtop = sb.position()['top'];
+        var curbot = curtop + sbh;
+        // does sidebar fit in window?
+        if (sbh < win.innerHeight()) {
+          // yes: easy case -- always keep at the top
+          sb.css('top', $u.min([$u.max([0, wintop - offset - 10]),
+                                $(document).height() - sbh - 200]));
+        } else {
+          // no: only scroll if top/bottom edge of sidebar is at
+          // top/bottom edge of window
+          if (curtop > wintop && curbot > winbot) {
+            sb.css('top', $u.max([wintop - offset - 10, 0]));
+          } else if (curtop < wintop && curbot < winbot) {
+            sb.css('top', $u.min([winbot - sbh - offset - 20,
+                                  $(document).height() - sbh - 200]));
+          }
+        }
+      });
+    </script>
+
+  </head><body>
+<div class="pageheader">
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="usage/installation.html">Get it</a></li>
+    <li><a href="contents.html">Docs</a></li>
+    <li><a href="develop.html">Extend/Develop</a></li>
+  </ul>
+  <div>
+    <a href="index.html">
+      <img src="_static/logo.png" alt="PyLiT" />
+    </a>
+  </div>
+</div>
+
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changes.html" title="Change Log"
+             accesskey="N">next</a> |</li>
+        <li class="right" >
+          <a href="data-directory.html" title="Erbach Power Calculator Data Directory"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Home</a>&#160;|</li>
+        <li><a href="contents.html">Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Command Line interface</a></li> 
+      </ul>
+    </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="contents.html">
+              <img class="logo" src="_static/badge.svg" alt="Logo"/>
+            </a></p>
+  <h3><a href="contents.html">Table of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Command Line interface</a><ul>
+<li><a class="reference internal" href="#basic-commands">Basic Commands</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="data-directory.html"
+                        title="previous chapter">Erbach Power Calculator Data Directory</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="changes.html"
+                        title="next chapter">Change Log</a></p>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/command-line-interface.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <p>Read time: 1.4 minutes (140 words)</p>
+<section id="command-line-interface">
+<h1>Command Line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h1>
+<p>This program uses the <strong>click</strong> library to set up the command line interface.
+This part of the design is important since it is the primary link to the human
+user.</p>
+<p>I will be using something called <em>Railroad Diagrams</em>, popular in defining
+programming languages to show the command set supported by the commaind line
+application.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The graphical user interface is coming. I develop the basic applicaion
+first, then add the GUI layer after tt==things are working well.</p>
+</div>
+<p>Here is an example of oneof these diagrams. We will introduce the command
+syntax in the next section.</p>
+<p class="railroad-diagram-container"><svg class="railroad-diagram" height="63" viewBox="0 0 418 63" width="418" data-dbg-cls="Element" data-dbg-w="0"><g data-dbg-cls="Element" data-dbg-w="0"><g data-dbg-cls="Sequence" data-dbg-w="416"><path d="M1 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M417 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M1 21h20m-20 -10v20" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M21 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="46"><path d="M31 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M77 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="46" x="31" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="54.0" y="21" data-dbg-cls="Element" data-dbg-w="0">def</text></g><path d="M77 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M87 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="37"><path d="M97 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M134 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="37" x="97" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="115.5" y="21" data-dbg-cls="Element" data-dbg-w="0">ID</text></g><path d="M134 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M144 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="29"><path d="M154 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M183 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="29" x="154" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="168.5" y="21" data-dbg-cls="Element" data-dbg-w="0">(</text></g><path d="M183 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Choice" data-dbg-w="106"><path d="M193 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M299 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M193 21a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M279 1a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M213 1h66" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M193 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M279 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Sequence" data-dbg-w="66"><path d="M213 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M279 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="OneOrMore" data-dbg-w="66"><path d="M213 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M279 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M213 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M269 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Sequence" data-dbg-w="46"><path d="M223 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M269 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node non-terminal" data-dbg-cls="Node" data-dbg-w="46"><path d="M223 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M269 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="0" ry="0" width="46" x="223" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="246.0" y="21" data-dbg-cls="Element" data-dbg-w="0">arg</text></g></g><path d="M223 21a10 10 0 0 0 -10 10v10a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M269 21a10 10 0 0 1 10 10v10a10 10 0 0 1 -10 10" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Sequence" data-dbg-w="29"><path d="M223 51h8" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M260 51h9" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="29"><path d="M231 51h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M260 51h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="29" x="231" y="40" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="245.5" y="51" data-dbg-cls="Element" data-dbg-w="0">,</text></g></g></g></g></g><path d="M299 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="29"><path d="M309 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M338 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="29" x="309" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="323.5" y="21" data-dbg-cls="Element" data-dbg-w="0">)</text></g><path d="M338 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M348 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="29"><path d="M358 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M387 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="29" x="358" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="372.5" y="21" data-dbg-cls="Element" data-dbg-w="0">:</text></g><path d="M387 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M397 21h20m0 -10v20" data-dbg-cls="Path" data-dbg-w="0"></path></g></g></svg></p><section id="basic-commands">
+<h2>Basic Commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h2>
+<p>The top-level commands are these:</p>
+<p class="railroad-diagram-container"><svg class="railroad-diagram" height="93" viewBox="0 0 446 93" width="446" data-dbg-cls="Element" data-dbg-w="0"><g data-dbg-cls="Element" data-dbg-w="0"><g data-dbg-cls="Sequence" data-dbg-w="444"><path d="M1 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M445 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M1 21h20m-20 -10v20" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Choice" data-dbg-w="119"><path d="M21 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M140 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M21 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M120 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="79"><path d="M41 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M120 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="79" x="41" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="80.5" y="21" data-dbg-cls="Element" data-dbg-w="0">airfoil</text></g><path d="M21 21a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M120 51a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="62"><path d="M41 51h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M103 51h17" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="62" x="41" y="40" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="72.0" y="51" data-dbg-cls="Element" data-dbg-w="0">model</text></g></g><g data-dbg-cls="Choice" data-dbg-w="151"><path d="M140 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M291 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M140 21a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M271 1a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M160 1h111" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M140 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M271 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Sequence" data-dbg-w="111"><path d="M160 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M271 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="37"><path d="M160 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M197 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="37" x="160" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="178.5" y="21" data-dbg-cls="Element" data-dbg-w="0">-i</text></g><path d="M197 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M207 21h10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node non-terminal" data-dbg-cls="Node" data-dbg-w="54"><path d="M217 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M271 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="0" ry="0" width="54" x="217" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="244.0" y="21" data-dbg-cls="Element" data-dbg-w="0">name</text></g></g></g><g data-dbg-cls="Choice" data-dbg-w="134"><path d="M291 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M425 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M291 21a10 10 0 0 0 10 -10v0a10 10 0 0 1 10 -10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M405 1a10 10 0 0 1 10 10v0a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M311 1h94" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M291 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M405 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><g data-dbg-cls="Choice" data-dbg-w="94"><path d="M311 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M405 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M311 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M385 21h20" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="54"><path d="M331 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M385 21h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="54" x="331" y="10" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="358.0" y="21" data-dbg-cls="Element" data-dbg-w="0">load</text></g><path d="M311 21a10 10 0 0 1 10 10v10a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M385 51a10 10 0 0 0 10 -10v-10a10 10 0 0 1 10 -10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="46"><path d="M331 51h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M377 51h8" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="46" x="331" y="40" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="354.0" y="51" data-dbg-cls="Element" data-dbg-w="0">set</text></g><path d="M311 21a10 10 0 0 1 10 10v40a10 10 0 0 0 10 10" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M385 81a10 10 0 0 0 10 -10v-40a10 10 0 0 1 10 -10" data-dbg-cls="Path" data-dbg-w="0"></path><g class="node terminal" data-dbg-cls="Node" data-dbg-w="54"><path d="M331 81h0" data-dbg-cls="Path" data-dbg-w="0"></path><path d="M385 81h0" data-dbg-cls="Path" data-dbg-w="0"></path><rect height="22" rx="10" ry="10" width="54" x="331" y="70" data-dbg-cls="Element" data-dbg-w="0"></rect><text x="358.0" y="81" data-dbg-cls="Element" data-dbg-w="0">plot</text></g></g></g><path d="M425 21h20m0 -10v20" data-dbg-cls="Path" data-dbg-w="0"></path></g></g></svg></p><p>The reason these are caled <em>railroad diagrams</em> should be apparent here. The
+rounded boxes are things you type exactly. The rectabgular boxes are where you
+come up with your own thing to enter. <strong>name</strong> in this example is the name of
+the airfoil od the model you want to study.</p>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="py-modindex.html" title="Python Module Index"
+             >modules</a> |</li>
+        <li class="right" >
+          <a href="changes.html" title="Change Log"
+             >next</a> |</li>
+        <li class="right" >
+          <a href="data-directory.html" title="Erbach Power Calculator Data Directory"
+             >previous</a> |</li>
+        <li><a href="index.html">Home</a>&#160;|</li>
+        <li><a href="contents.html">Documentation</a> &#187;</li>
+
+        <li class="nav-item nav-item-this"><a href="">Command Line interface</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2021, Roie R. Black.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+    </div>
+  </body>
+</html>
