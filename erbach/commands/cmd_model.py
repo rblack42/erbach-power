@@ -1,18 +1,17 @@
-#cmd_airfoil.py
+#cmd_model.py
 from erbach.DataLoader import DataLoader
 
-# Define our default class
 class Plugin:
-    help = "airfoil plugin"
+    help = "model plugin"
 
     def process(self, ctx):
         dl = DataLoader(ctx)
-        alist = dl.get_airfoil_list()
+        alist = dl.get_model_list()
         n = len(alist)
         i = 1
-        print("select airfoil")
+        print("select model")
         for a in alist:
-            if ctx.airfoil == a:
+            if ctx.model == a:
                 tag = "*"
             else:
                 tag = " "
@@ -26,7 +25,7 @@ class Plugin:
                 return
             print("bad choice")
         else:
-            ctx.airfoil = alist[choice-1]
-            print("selected:", ctx.airfoil)
+            ctx.model = alist[choice-1]
+            print("selected:", ctx.model)
 
         ctx.argcount +=1
