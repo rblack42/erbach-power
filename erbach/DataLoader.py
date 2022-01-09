@@ -1,17 +1,20 @@
 import os
-
+from . import utils
 
 class DataLoader(object):
     """Manages loading of model and airfoil for project"""
 
-    def __init__(self, model='default', airfoil='mcbride-b7'):
+    def __init__(self, model='erbach-basic', airfoil='mcbride-b7'):
         """class constructor, model and airfoil parameters"""
         self.model = model
         self.airfoil = airfoil
-        print(__file__)
+        self.airfoil_data = []
+        self.model_data = []
         filepath = os.path.dirname(__file__)
         self.datadir = os.path.abspath(
             os.path.join(filepath,'../data'))
+        self.modeldir = os.path.join(self.datadir,'models')
+        self.airfoil_path = os.path.join(self.datadir,'airfoils')
 
     # accessors -------------------------------------------------
     def get_model_name(self):
@@ -44,6 +47,9 @@ class DataLoader(object):
                 airfoils.append(n)
         return airfoils
 
+    def get_airfoil_data(self):
+        return self.airfoil_data
+
     # setters ---------------------------------------------------
     def set_data_dir(self, datadir):
         """set project data directory path"""
@@ -66,18 +72,26 @@ class DataLoader(object):
 
         # load model data
         model = self.model
-        # load airfoil cl, and cd data
-        datadir = self._find_data_path('model', model)
         fileset = self._find_data_files('model', model)
-        print("Loading:", datadir)
-        print("files:", fileset)
+        print("model files:", fileset)
+        dataset = []
+        for m in fileset:
+            mpath = os.path.join(self.datadir, 'models', m)
+            mdata = utils.load_yaml_file(mpath)
+            dataset.append(mdata)
+        self.model_data = dataset
 
         # load airfoil data
         airfoil = self.airfoil
-        datadir = self._find_data_path('airfoil', airfoil)
         fileset = self._find_data_files('airfoil', model)
-        print("loading:", datadir)
-        print("files:", fileset)
+        print("airfoil files:", fileset)
+        dataset = {}
+        for m in fileset:
+            mpath = os.path.join(self.datadir, 'airfoils', m)
+            mdata = utils.load_yaml_file(mpath)
+            dataset.append(mdata)
+        self.airfoil_data = dataset
+
 
     def _find_data_path(self, dtype, dpath):
         datadir = os.path.abspath(
@@ -93,10 +107,10 @@ class DataLoader(object):
         else:
             return ["mcbride-b7/CL.yml", "mcbride-b7/CD.yml"]
 
+
 if __name__ == '__main__':
     dl = DataLoader('a','b')
     #dl.set_data_dir('~/data')
     #print(dl.get_datadir())
     #print(dl.get_airfoil_list())
     dl.load_data()
-
