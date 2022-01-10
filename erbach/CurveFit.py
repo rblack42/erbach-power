@@ -1,10 +1,11 @@
 import numpy as np
-from scipy import interpolate
+from scipy.interpolate import InterpolatedUnivariateSpline
 
 
 class CurveFit(object):
-    """Manages generating spline curve fit functin for inputX-Y data lists"""
+    """Manages generating spline curve fit function"""
 
+ 
     def __init__(self):
         """constructor does no work"""
         pass
@@ -14,5 +15,5 @@ class CurveFit(object):
         xi = np.array(xd)
         yi = np.array(yd)
         order = 1
-        s = interpolate.InterpolatedUnivariateSpline(xi, yi, k=order)
+        s = InterpolatedUnivariateSpline(xi, yi, k=order)
         return s

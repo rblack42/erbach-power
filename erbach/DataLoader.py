@@ -30,13 +30,14 @@ class DataLoader(object):
             afiles.append(a[:-4])
         return afiles
 
-    def get_model_data(self):
+    def load_model_data(self):
         model = self.ctx.model
         mpath = self.ctx.mpath
         #print("loading data for:", model, "from",mpath)
         mname = os.path.join(mpath, model+'.yml')
         data = utils.load_yaml_file(mname)
         #print(data)
+        self.ctx.model_data = data
 
     def load_airfoil_data(self):
         """read raw data files, extract Cl, Cd points"""
