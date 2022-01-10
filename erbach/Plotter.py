@@ -4,29 +4,58 @@ from . DataLoader  import DataLoader
 
 class Plotter(object):
 
-    def __init__(self):
-        pass
+    def __init__(self,ctx):
+        """create plotter using current contect"""
+        self.ctx = ctx
 
-    def plot_airfoil_polar(self):
-        d = DataLoader()
-        d.load_data()
-        airfoil_data = d.get_airfoil_data()
-        print(airfoil_data)
+    def plot_airfoil_lift(self):
+        airfoil_data = self.ctx.airfoil_data
+        name = self.ctx.airfoil
+        #print(airfoil_data)
         x = []
         y = []
-        name = airfoil_data[0]['name']
-        CL = airfoil_data[0]['data']
-        CD = airfoil_data[1]['data']
+        CL = airfoil_data['CL'][1]
+        alpha = airfoil_data['CL'][0]
+        title = f"{name} Lift Coefficient"
+        for l in CL:
+            y.append(l)
+        for a in alpha:
+            x.append(a)
+        self.curveplot(x,y,"Alpha", "Cl", title)
+
+    def plot_airfoil_drag(self):
+        airfoil_data = self.ctx.airfoil_data
+        name = self.ctx.airfoil
+        #print(airfoil_data)
+        x = []
+        y = []
+        CD = airfoil_data['CD'][1]
+        alpha = airfoil_data['CD'][0]
+        title = f"{name} Drag Coefficient"
+        for d in CD:
+            y.append(d)
+        for a in alpha:
+            x.append(a)
+        self.curveplot(x,y,"Alpha", "Cd", title)
+
+    def plot_airfoil_polar(self):
+        airfoil_data = self.ctx.airfoil_data
+        name = self.ctx.airfoil
+        #print(airfoil_data)
+        x = []
+        y = []
+        CL = airfoil_data['CL'][1]
+        CD = airfoil_data['CD'][1]
         title = f"{name} Polar"
         for l in CL:
-            y.append(l[1])
+            y.append(l)
         for d in CD:
-            x.append(d[1])
+            x.append(d)
         self.curveplot(x,y,"Cd", "Cl", title)
-        return x,y
-
 
     def curveplot(self, xp,yp, xlabel, ylabel, title):
+        #print("CD", xp)
+        #print("CL",yp)
         plt.plot(xp,yp,)
         plt.xlabel(xlabel)
         plt.ylabel(ylabel)

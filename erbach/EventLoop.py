@@ -21,7 +21,7 @@ class CLI(object):
         sys.path.append(ppath)
         if self.debug:
                 print("added:",ppath)
-        for (dirpath, dirnames, filenames) in os.walk(apath):
+        for (dirpath, dirnames, filenames) in os.walk(ppath):
             f.extend(filenames)
             break   #stop loop after files are available
 

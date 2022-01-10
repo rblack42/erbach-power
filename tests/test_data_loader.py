@@ -11,13 +11,13 @@ def test_data_loader_constructor():
     assert dl.ctx.apath.endswith("data/airfoils")
     assert dl.ctx.mpath.endswith("data/models")
 
-def test_data_loader_constructor():
+def test_airfoils_list():
     """check default airfoil list"""
     ctx = Context()
     dl = DataLoader(ctx)
     assert "mcbride-b7" in dl.get_airfoil_list()
 
-def test_data_loader_constructor():
+def test_model_list():
     """check default model list"""
     ctx = Context()
     dl = DataLoader(ctx)
