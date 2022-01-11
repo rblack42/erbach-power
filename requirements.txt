@@ -5,6 +5,7 @@ click
 pyyaml
 numpy
 scipy
+sympy
 pint
 matplotlib
 
@@ -17,6 +18,7 @@ coverage
 sphinx
 sphinxcontrib-programoutput
 sphinxcontrib-spelling
+jupyter-book
 
 # package management
 bump2version
