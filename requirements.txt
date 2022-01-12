@@ -19,6 +19,7 @@ sphinx
 sphinxcontrib-programoutput
 sphinxcontrib-spelling
 jupyter-book
+git+git://github.com/mkrphys/ipython-tikzmagic.git
 
 # package management
 bump2version
