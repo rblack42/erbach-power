@@ -12,7 +12,7 @@ def read(*names, **kwargs):
         return fh.read()
 
 setup(
-    name='erbach',
+    name='mmpower',
     description='Power calculator for Indoor model airplanes',
     long_description=re.compile(
         '^.. start-badges.*^.. end-badges',
@@ -27,7 +27,7 @@ setup(
     url='https://github.com/rblack42/erbach-power',
     license='BSD',
     version='0.1.2',
-    packages=['erbach'],
+    packages=['mmpower'],
 entry_points= {
         "console_scripts": [
             "mmf = erbach.cli:cli"

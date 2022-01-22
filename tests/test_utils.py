@@ -2,7 +2,7 @@ import pytest
 import os
 
 
-from erbach import utils
+from mmpower import utils
 
 def test_normalize():
     """test reducing precision of floating point numbers"""

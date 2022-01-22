@@ -1,4 +1,4 @@
-PROCECT	:= $(notdir $(PWD))
+PROJECT	:= $(notdir $(PWD))
 MK	:= mk
 
 all:	test

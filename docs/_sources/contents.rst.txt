@@ -9,6 +9,7 @@ Erbach Power for Indoor  Model Airplanes
     project-setup
     data-directory
     command-line-interface
+    event-loops
     changes
 
 Appendix

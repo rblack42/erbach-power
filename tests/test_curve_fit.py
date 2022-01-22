@@ -1,9 +1,9 @@
 import pytest
 import os
-from erbach import utils
+from mmpower import utils
 
 
-from erbach.CurveFit import CurveFit
+from mmpower.CurveFit import CurveFit
 
 def test_fit_function():
     """test fit function returns point from input"""

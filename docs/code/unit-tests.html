@@ -3,8 +3,7 @@
 
 <html>
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Unit Tests &#8212; Erbach Power 0.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinx13.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -19,7 +18,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="utils Module Unit Tests" href="utils.html" />
-    <link rel="prev" title="DataLoader" href="DataLoader.html" />
+    <link rel="prev" title="Plotter" href="Plugins.html" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
  
@@ -85,7 +84,7 @@
           <a href="utils.html" title="utils Module Unit Tests"
              accesskey="N">next</a> |</li>
         <li class="right" >
-          <a href="DataLoader.html" title="DataLoader"
+          <a href="Plugins.html" title="Plotter"
              accesskey="P">previous</a> |</li>
         <li><a href="../index.html">Home</a>&#160;|</li>
         <li><a href="../contents.html">Documentation</a> &#187;</li>
@@ -112,8 +111,8 @@
 </ul>
 
   <h4>Previous topic</h4>
-  <p class="topless"><a href="DataLoader.html"
-                        title="previous chapter">DataLoader</a></p>
+  <p class="topless"><a href="Plugins.html"
+                        title="previous chapter">Plotter</a></p>
   <h4>Next topic</h4>
   <p class="topless"><a href="utils.html"
                         title="next chapter">utils Module Unit Tests</a></p>
@@ -142,25 +141,19 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>Read time: 0.7 minutes (74 words)</p>
-<section id="unit-tests">
+  <p>Read time: 0.3 minutes (31 words)</p>
+<div class="section" id="unit-tests">
 <h1>Unit Tests<a class="headerlink" href="#unit-tests" title="Permalink to this headline">¶</a></h1>
-<section id="module-tests.test_cli">
+<div class="section" id="module-tests.test_cli">
 <span id="command-lne-interface"></span><h2>Command Lne Interface<a class="headerlink" href="#module-tests.test_cli" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_cli.test_cli_environment">
-<span class="sig-prename descclassname"><span class="pre">tests.test_cli.</span></span><span class="sig-name descname"><span class="pre">test_cli_environment</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_cli.html#test_cli_environment"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_cli.test_cli_environment" title="Permalink to this definition">¶</a></dt>
-<dd><p>verify that the environment is set</p>
+<dt class="sig sig-object py" id="tests.test_cli.test_sanity">
+<span class="sig-prename descclassname"><span class="pre">tests.test_cli.</span></span><span class="sig-name descname"><span class="pre">test_sanity</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_cli.html#test_sanity"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_cli.test_sanity" title="Permalink to this definition">¶</a></dt>
+<dd><p>test to make sure pytest is working</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_cli.test_cli_help_option">
-<span class="sig-prename descclassname"><span class="pre">tests.test_cli.</span></span><span class="sig-name descname"><span class="pre">test_cli_help_option</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_cli.html#test_cli_help_option"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_cli.test_cli_help_option" title="Permalink to this definition">¶</a></dt>
-<dd><p>test cli help option</p>
-</dd></dl>
-
-</section>
-<section id="module-tests.test_curve_fit">
+</div>
+<div class="section" id="module-tests.test_curve_fit">
 <span id="plotting-routines"></span><h2>Plotting Routines<a class="headerlink" href="#module-tests.test_curve_fit" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="tests.test_curve_fit.test_fit_function">
@@ -168,59 +161,17 @@
 <dd><p>test fit function returns point from input</p>
 </dd></dl>
 
-</section>
-<section id="module-tests.test_data_loader">
+</div>
+<div class="section" id="module-tests.test_data_loader">
 <span id="data-file-loader"></span><h2>Data File Loader<a class="headerlink" href="#module-tests.test_data_loader" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_constructor_no_parameters">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_constructor_no_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_constructor_no_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_constructor_no_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>test constructor with no parameters</p>
+<dt class="sig sig-object py" id="tests.test_data_loader.test_data_loader_constructor">
+<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_data_loader_constructor</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dirlist</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_data_loader_constructor"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_data_loader_constructor" title="Permalink to this definition">¶</a></dt>
+<dd><p>check default returns data path</p>
 </dd></dl>
 
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_constructor_with_all_parameters">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_constructor_with_all_parameters</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_constructor_with_all_parameters"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_constructor_with_all_parameters" title="Permalink to this definition">¶</a></dt>
-<dd><p>test constructor with all parameters</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_constructor_with_no_airfoil">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_constructor_with_no_airfoil</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_constructor_with_no_airfoil"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_constructor_with_no_airfoil" title="Permalink to this definition">¶</a></dt>
-<dd><p>test constructor with no airfoil specified</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_constructor_with_no_model">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_constructor_with_no_model</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_constructor_with_no_model"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_constructor_with_no_model" title="Permalink to this definition">¶</a></dt>
-<dd><p>test constructor with no model specified</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_default_datadir">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_default_datadir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_default_datadir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_default_datadir" title="Permalink to this definition">¶</a></dt>
-<dd><p>test default datadir option</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_set_absolute_data_dir_path">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_set_absolute_data_dir_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_set_absolute_data_dir_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_set_absolute_data_dir_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>test setting datadir path to absolute path</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_set_home_data_dir_path">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_set_home_data_dir_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_set_home_data_dir_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_set_home_data_dir_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>test setting datadir path in home directory</p>
-</dd></dl>
-
-<dl class="py function">
-<dt class="sig sig-object py" id="tests.test_data_loader.test_set_relative_data_dir_path">
-<span class="sig-prename descclassname"><span class="pre">tests.test_data_loader.</span></span><span class="sig-name descname"><span class="pre">test_set_relative_data_dir_path</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/tests/test_data_loader.html#test_set_relative_data_dir_path"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#tests.test_data_loader.test_set_relative_data_dir_path" title="Permalink to this definition">¶</a></dt>
-<dd><p>test setting relative datadir path</p>
-</dd></dl>
-
-</section>
-<section id="module-tests.test_sanity">
+</div>
+<div class="section" id="module-tests.test_sanity">
 <span id="version-management"></span><h2>Version Management<a class="headerlink" href="#module-tests.test_sanity" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="tests.test_sanity.test_sanity">
@@ -228,8 +179,8 @@
 <dd><p>test to make sure pytest is working</p>
 </dd></dl>
 
-</section>
-<section id="module-tests.test_version">
+</div>
+<div class="section" id="module-tests.test_version">
 <span id="general-program-utilities"></span><h2>General Program Utilities<a class="headerlink" href="#module-tests.test_version" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
 <dt class="sig sig-object py" id="tests.test_version.test_version">
@@ -237,11 +188,11 @@
 <dd><p>Return current application version string</p>
 </dd></dl>
 
-</section>
-<section id="basic-teting-system-check">
+</div>
+<div class="section" id="basic-teting-system-check">
 <h2>Basic Teting System Check<a class="headerlink" href="#basic-teting-system-check" title="Permalink to this headline">¶</a></h2>
-</section>
-</section>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -263,7 +214,7 @@
           <a href="utils.html" title="utils Module Unit Tests"
              >next</a> |</li>
         <li class="right" >
-          <a href="DataLoader.html" title="DataLoader"
+          <a href="Plugins.html" title="Plotter"
              >previous</a> |</li>
         <li><a href="../index.html">Home</a>&#160;|</li>
         <li><a href="../contents.html">Documentation</a> &#187;</li>

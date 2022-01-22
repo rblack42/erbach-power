@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx13.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/a4_railroad_diagram.css" />
     <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -110,106 +111,41 @@
   <h1>Source code for erbach.DataLoader</h1><div class="highlight"><pre>
 <span></span><span class="kn">import</span> <span class="nn">os</span>
 
+<div class="viewcode-block" id="DataLoader"><a class="viewcode-back" href="../../code/DataLoader%20copy.html#erbach.DataLoader.DataLoader">[docs]</a><span class="k">class</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Locate available data direcrories for app&quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="DataLoader"><a class="viewcode-back" href="../../code/DataLoader.html#erbach.DataLoader.DataLoader">[docs]</a><span class="k">class</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot;Manages loading of model and airfoil for project&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">env_key</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">home_dir</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;check dirs named by environment key and home_dir name&#39;&#39;&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">env_key</span> <span class="o">=</span> <span class="n">env_key</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">home_dir</span> <span class="o">=</span> <span class="n">home_dir</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">model</span><span class="o">=</span><span class="s1">&#39;default&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="o">=</span><span class="s1">&#39;mcbride-b7&#39;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;class constructor, model and airfoil parameters&quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">model</span> <span class="o">=</span> <span class="n">model</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">airfoil</span> <span class="o">=</span> <span class="n">airfoil</span>
-        <span class="nb">print</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
-        <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
-            <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="s1">&#39;../data&#39;</span><span class="p">))</span>
+<div class="viewcode-block" id="DataLoader.get_data_dir_list"><a class="viewcode-back" href="../../code/DataLoader%20copy.html#erbach.DataLoader.DataLoader.get_data_dir_list">[docs]</a>    <span class="k">def</span> <span class="nf">get_data_dir_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;return a list of available data directories&quot;&quot;&quot;</span>
+        <span class="n">dir_list</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="c1"># check configured environment variable</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">home_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">env_key</span> <span class="ow">in</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">:</span>
+                <span class="n">dp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">environ</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">env_key</span><span class="p">]</span>
+                <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">dp</span><span class="p">):</span>
+                    <span class="n">dir_list</span><span class="o">.</span><span class="n">append</span><span class="p">[</span><span class="n">dp</span><span class="p">]</span>
 
-    <span class="c1"># accessors -------------------------------------------------</span>
-<div class="viewcode-block" id="DataLoader.get_model_name"><a class="viewcode-back" href="../../code/DataLoader.html#erbach.DataLoader.DataLoader.get_model_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_model_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;returns current model name&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span></div>
+        <span class="c1"># check home directory</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">home_dir</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="kn">from</span> <span class="nn">os.path</span> <span class="kn">import</span> <span class="n">expanduser</span>
+            <span class="n">home</span> <span class="o">=</span> <span class="n">expanduser</span><span class="p">(</span><span class="s2">&quot;~&quot;</span><span class="p">)</span>
+            <span class="n">hp</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">home</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">home_dir</span><span class="p">)</span>
+            <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isdir</span><span class="p">(</span><span class="n">hp</span><span class="p">):</span>
+                <span class="n">dir_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">hp</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DataLoader.get_airfoil_name"><a class="viewcode-back" href="../../code/DataLoader.html#erbach.DataLoader.DataLoader.get_airfoil_name">[docs]</a>    <span class="k">def</span> <span class="nf">get_airfoil_name</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;returns current airfoil name&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">airfoil</span></div>
-
-<div class="viewcode-block" id="DataLoader.get_datadir"><a class="viewcode-back" href="../../code/DataLoader.html#erbach.DataLoader.DataLoader.get_datadir">[docs]</a>    <span class="k">def</span> <span class="nf">get_datadir</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;returns current data dir&quot;&quot;&quot;</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">datadir</span></div>
-
-    <span class="k">def</span> <span class="nf">get_model_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">model_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datadir</span><span class="p">,</span><span class="s1">&#39;models&#39;</span><span class="p">)</span>
-        <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">model_path</span><span class="p">)</span>
-        <span class="n">models</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="n">n</span><span class="p">,</span><span class="n">e</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">)</span>
-            <span class="n">models</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">models</span>
-
-    <span class="k">def</span> <span class="nf">get_airfoil_list</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="n">airfoil_path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">datadir</span><span class="p">,</span><span class="s1">&#39;airfoils&#39;</span><span class="p">)</span>
-        <span class="n">files</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">listdir</span><span class="p">(</span><span class="n">airfoil_path</span><span class="p">)</span>
-        <span class="n">airfoils</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="n">files</span><span class="p">:</span>
-            <span class="k">if</span> <span class="ow">not</span> <span class="n">n</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
-                <span class="n">airfoils</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">airfoils</span>
-
-    <span class="c1"># setters ---------------------------------------------------</span>
-<div class="viewcode-block" id="DataLoader.set_data_dir"><a class="viewcode-back" href="../../code/DataLoader.html#erbach.DataLoader.DataLoader.set_data_dir">[docs]</a>    <span class="k">def</span> <span class="nf">set_data_dir</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">datadir</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;set project data directory path&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">datadir</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;.&#39;</span><span class="p">):</span>
-            <span class="c1"># relative path</span>
-            <span class="n">filepath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
-                <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">filepath</span><span class="p">,</span><span class="n">datadir</span><span class="p">))</span>
-        <span class="k">elif</span> <span class="n">datadir</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;~&#39;</span><span class="p">):</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="n">datadir</span><span class="p">)</span>
-            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;HOME:&quot;</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">datadir</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="c1"># absolute path</span>
-            <span class="nb">print</span><span class="p">(</span><span class="n">datadir</span><span class="p">)</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span><span class="n">datadir</span><span class="p">)</span></div>
-
-    <span class="c1"># mutatore - change state ------------------------------------</span>
-<div class="viewcode-block" id="DataLoader.load_data"><a class="viewcode-back" href="../../code/DataLoader.html#erbach.DataLoader.DataLoader.load_data">[docs]</a>    <span class="k">def</span> <span class="nf">load_data</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;load configured data files&quot;&quot;&quot;</span>
-
-        <span class="c1"># load model data</span>
-        <span class="n">model</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span>
-        <span class="c1"># load airfoil cl, and cd data</span>
-        <span class="n">datadir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_data_path</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-        <span class="n">fileset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_data_files</span><span class="p">(</span><span class="s1">&#39;model&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Loading:&quot;</span><span class="p">,</span> <span class="n">datadir</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;files:&quot;</span><span class="p">,</span> <span class="n">fileset</span><span class="p">)</span>
-
-        <span class="c1"># load airfoil data</span>
-        <span class="n">airfoil</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">airfoil</span>
-        <span class="n">datadir</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_data_path</span><span class="p">(</span><span class="s1">&#39;airfoil&#39;</span><span class="p">,</span> <span class="n">airfoil</span><span class="p">)</span>
-        <span class="n">fileset</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_find_data_files</span><span class="p">(</span><span class="s1">&#39;airfoil&#39;</span><span class="p">,</span> <span class="n">model</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;loading:&quot;</span><span class="p">,</span> <span class="n">datadir</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;files:&quot;</span><span class="p">,</span> <span class="n">fileset</span><span class="p">)</span></div>
-
-    <span class="k">def</span> <span class="nf">_find_data_path</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">dpath</span><span class="p">):</span>
-        <span class="n">datadir</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
+        <span class="c1"># check application data directory</span>
+        <span class="n">dpath</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">abspath</span><span class="p">(</span>
             <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
                 <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span>
-                <span class="s1">&#39;../data&#39;</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">dpath</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">datadir</span>
-
-    <span class="k">def</span> <span class="nf">_find_data_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">dtype</span><span class="p">,</span> <span class="n">dname</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;returns a list if available data files&quot;&quot;&quot;</span>
-        <span class="k">if</span> <span class="n">dtype</span> <span class="o">==</span> <span class="s1">&#39;model&#39;</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;erbach-basic.yml&quot;</span><span class="p">]</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="p">[</span><span class="s2">&quot;mcbride-b7/CL.yml&quot;</span><span class="p">,</span> <span class="s2">&quot;mcbride-b7/CD.yml&quot;</span><span class="p">]</span></div>
-
-<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
-    <span class="n">dl</span> <span class="o">=</span> <span class="n">DataLoader</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span><span class="s1">&#39;b&#39;</span><span class="p">)</span>
-    <span class="c1">#dl.set_data_dir(&#39;~/data&#39;)</span>
-    <span class="c1">#print(dl.get_datadir())</span>
-    <span class="c1">#print(dl.get_airfoil_list())</span>
-    <span class="n">dl</span><span class="o">.</span><span class="n">load_data</span><span class="p">()</span>
-
+                <span class="s1">&#39;data&#39;</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">dir_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">dpath</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">dir_list</span></div></div>
 </pre></div>
 
             <div class="clearer"></div>

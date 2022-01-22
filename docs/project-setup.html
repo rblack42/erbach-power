@@ -3,8 +3,7 @@
 
 <html>
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>Project Setup &#8212; Erbach Power 0.1.0 documentation</title>
     <link rel="stylesheet" href="_static/sphinx13.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -139,10 +138,10 @@
           <div class="body" role="main">
             
   <p>Read time: 1.6 minutes (158 words)</p>
-<section id="project-setup">
+<div class="section" id="project-setup">
 <h1>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h1>
 <p>The first step in creating a Python application involves setting up the project directory. I use simple command line tools to manage my projects, so we will begin this setup by making (pun intended) sure that <strong>make</strong> works properly.</p>
-<section id="step-1-name-the-project">
+<div class="section" id="step-1-name-the-project">
 <h2>Step 1: Name the Project<a class="headerlink" href="#step-1-name-the-project" title="Permalink to this headline">¶</a></h2>
 <p>For this example, the project name will be <strong>erbach-power</strong>. I keep all active
 projects in a directory named <strong>_dev</strong> in my home directory. (The <strong>_</strong> in
@@ -158,23 +157,24 @@ $ <span class="nb">cd</span> erbach-power
 and over without problems. This is important to me, since my documentation
 actually runs these commands when i build the web pages for this project. We
 will cover documentation soon enough.</p>
-</section>
-<section id="step-2-startup-makefile">
+</div>
+<div class="section" id="step-2-startup-makefile">
 <h2>Step 2: Startup Makefile<a class="headerlink" href="#step-2-startup-makefile" title="Permalink to this headline">¶</a></h2>
 <p>Long ago I created a modular Makefile* system to simplify creating a <strong>Makefile</strong> for a project. Basically, this file will be in your new project folder:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos">1</span>PROCECT	:= $(notdir $(PWD))
-<span class="linenos">2</span>MK	:= mk
-<span class="linenos">3</span>
-<span class="linenos">4</span>all:	test
-<span class="linenos">5</span>
-<span class="linenos">6</span>include $(MK)/help.mk
-<span class="linenos">7</span>include $(MK)/python.mk
-<span class="linenos">8</span>include $(MK)/sphinx.mk
-<span class="linenos">9</span>include $(MK)/version.mk
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="linenos"> 1</span>PROCECT	:= $(notdir $(PWD))
+<span class="linenos"> 2</span>MK	:= mk
+<span class="linenos"> 3</span>
+<span class="linenos"> 4</span>all:	test
+<span class="linenos"> 5</span>
+<span class="linenos"> 6</span>include $(MK)/help.mk
+<span class="linenos"> 7</span>include $(MK)/python.mk
+<span class="linenos"> 8</span>include $(MK)/sphinx.mk
+<span class="linenos"> 9</span>include $(MK)/version.mk
+<span class="linenos">10</span>include $(MK)/jupyter.mk
 </pre></div>
 </div>
-</section>
-</section>
+</div>
+</div>
 
 
             <div class="clearer"></div>

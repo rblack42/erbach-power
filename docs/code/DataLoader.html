@@ -3,8 +3,7 @@
 
 <html>
   <head>
-    <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta charset="utf-8" />
     <title>DataLoader &#8212; Erbach Power 0.1.0 documentation</title>
     <link rel="stylesheet" href="../_static/sphinx13.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -18,7 +17,7 @@
     <script src="../_static/doctools.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="Unit Tests" href="unit-tests.html" />
+    <link rel="next" title="DataLoader" href="DataLoader%20copy.html" />
     <link rel="prev" title="Change Log" href="../changes.html" />
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700'
           rel='stylesheet' type='text/css' />
@@ -82,7 +81,7 @@
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="unit-tests.html" title="Unit Tests"
+          <a href="DataLoader%20copy.html" title="DataLoader"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="../changes.html" title="Change Log"
@@ -101,7 +100,11 @@
   <h3><a href="../contents.html">Table of Contents</a></h3>
   <ul>
 <li><a class="reference internal" href="#">DataLoader</a><ul>
-<li><a class="reference internal" href="#notes">Notes</a></li>
+<li><a class="reference internal" href="#notes">Notes</a><ul>
+<li><a class="reference internal" href="#data-directory-path">Data Directory Path</a></li>
+<li><a class="reference internal" href="#data-file-format">Data File Format</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -110,8 +113,8 @@
   <p class="topless"><a href="../changes.html"
                         title="previous chapter">Change Log</a></p>
   <h4>Next topic</h4>
-  <p class="topless"><a href="unit-tests.html"
-                        title="next chapter">Unit Tests</a></p>
+  <p class="topless"><a href="DataLoader%20copy.html"
+                        title="next chapter">DataLoader</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -137,59 +140,49 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <p>Read time: 1.1 minutes (110 words)</p>
-<section id="module-erbach.DataLoader">
+  <p>Read time: 1.6 minutes (159 words)</p>
+<div class="section" id="module-erbach.DataLoader">
 <span id="dataloader"></span><h1>DataLoader<a class="headerlink" href="#module-erbach.DataLoader" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="erbach.DataLoader.DataLoader">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">erbach.DataLoader.</span></span><span class="sig-name descname"><span class="pre">DataLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">model</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'default'</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">airfoil</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'mcbride-b7'</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader" title="Permalink to this definition">¶</a></dt>
-<dd><p>Manages loading of model and airfoil for project</p>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">erbach.DataLoader.</span></span><span class="sig-name descname"><span class="pre">DataLoader</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">env_key</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">home_dir</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader" title="Permalink to this definition">¶</a></dt>
+<dd><p>Locate available data direcrories for app</p>
 <dl class="py method">
-<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.get_airfoil_name">
-<span class="sig-name descname"><span class="pre">get_airfoil_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.get_airfoil_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.get_airfoil_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns current airfoil name</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.get_datadir">
-<span class="sig-name descname"><span class="pre">get_datadir</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.get_datadir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.get_datadir" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns current data dir</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.get_model_name">
-<span class="sig-name descname"><span class="pre">get_model_name</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.get_model_name"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.get_model_name" title="Permalink to this definition">¶</a></dt>
-<dd><p>returns current model name</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.load_data">
-<span class="sig-name descname"><span class="pre">load_data</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.load_data"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.load_data" title="Permalink to this definition">¶</a></dt>
-<dd><p>load configured data files</p>
-</dd></dl>
-
-<dl class="py method">
-<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.set_data_dir">
-<span class="sig-name descname"><span class="pre">set_data_dir</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">datadir</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.set_data_dir"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.set_data_dir" title="Permalink to this definition">¶</a></dt>
-<dd><p>set project data directory path</p>
+<dt class="sig sig-object py" id="erbach.DataLoader.DataLoader.get_data_dir_list">
+<span class="sig-name descname"><span class="pre">get_data_dir_list</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/erbach/DataLoader.html#DataLoader.get_data_dir_list"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#erbach.DataLoader.DataLoader.get_data_dir_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>return a list of available data directories</p>
 </dd></dl>
 
 </dd></dl>
 
-<section id="notes">
+<div class="section" id="notes">
 <h2>Notes<a class="headerlink" href="#notes" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>DataLoader</strong> class manages loading model and airfoil data files located in
-the configured <strong>datapath</strong> attribute.</p>
-<p>For model data, one data file, either <strong>YAML</strong> or <strong>JSON</strong> should be in a
-<strong>&lt;datadir&gt;/models/&lt;model&gt;/name&gt;.{yml | json}</strong> file.</p>
-<p>For airfoils, the data files are located under the airfoil name folder:
-&lt;datadir&gt;/airfoils/&lt;airfoil-name&gt;/{CL|CD}.{yml|json}**. If the file is a <strong>JSON</strong>
-file, it is assumed to have been created using the <em>WebAppDigitizer</em>
-application. All installed airfoils need at lease a <strong>CL.{yml|json}</strong> and
-<strong>CD.{yml|json}</strong>. files. Other files may be present, but they will not be loaded
-normally.</p>
-</section>
-</section>
+<p>This module manages loading model and airfoil data for analysis. These data
+files have a very simple structure: one line that identifies the data, followed
+by a series of lines with <strong>x-y</strong> values defining the data curve.</p>
+<div class="section" id="data-directory-path">
+<h3>Data Directory Path<a class="headerlink" href="#data-directory-path" title="Permalink to this headline">¶</a></h3>
+<p>The program will search for data files in one of three places, searched in
+this order:</p>
+<ul class="simple">
+<li><p>A location defined by the <strong>MATHMAGIC</strong> environment variable</p></li>
+<li><p>The <strong>MathMagik</strong> directory in the user’s home directory</p></li>
+<li><p>The <strong>data</strong> directory in the <strong>mmflight</strong> application source code directory.</p></li>
+</ul>
+<p>The default data provided in that last directory was extracted from Erbach’s
+original Basic code.</p>
+<p>For this program, the required data files will be located in the <strong>model</strong> and
+<strong>airfoils</strong> subdirectories.</p>
+</div>
+<div class="section" id="data-file-format">
+<h3>Data File Format<a class="headerlink" href="#data-file-format" title="Permalink to this headline">¶</a></h3>
+<p>The data files are simple text files containing point data for the curve
+define. The first line in the file includes the Rname of the curve defined.
+The curve is defined by a series of lines, each containing the <a href="#id1"><span class="problematic" id="id2">**</span></a>x <a href="#id3"><span class="problematic" id="id4">**</span></a>y values,
+space separated.</p>
+</div>
+</div>
+</div>
 
 
             <div class="clearer"></div>
@@ -208,7 +201,7 @@ normally.</p>
           <a href="../py-modindex.html" title="Python Module Index"
              >modules</a> |</li>
         <li class="right" >
-          <a href="unit-tests.html" title="Unit Tests"
+          <a href="DataLoader%20copy.html" title="DataLoader"
              >next</a> |</li>
         <li class="right" >
           <a href="../changes.html" title="Change Log"

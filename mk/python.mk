@@ -18,6 +18,6 @@ changes:	## create CHANGES file from git logs
 
 .PHONY: run
 run:
-	python -m erbach
+	python -m $(PROJECT)
 
 
