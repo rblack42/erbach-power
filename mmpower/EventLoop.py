@@ -7,7 +7,7 @@ from . Context import Context
 class CLI(object):
     """Primative event loop for commandline"""
 
-    debug = False
+    debug = True
 
     def __init__(self):
         """Load plugins and set command loop"""
@@ -38,6 +38,7 @@ class CLI(object):
                 if self.debug:
                     print("added", pname)
             except:
+                print("import failed")
                 pass
             if self.debug:
                 print(self.plugins)
